@@ -1,16 +1,30 @@
-body, select, input[type="text"] {
+body {
+	background-color: #FF6541;
+}
+
+select {
+	background-color: #5A82FF;
+	border-color: #000000;
+}
+
+h1, input[type="text"] {
 	font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", "monospace";
 }
 
-input[type="text"], select, label {
-	font-size: 16px;
+input {
+	background-color: #FFDC41;
+	border-color: #000000;
+}
+
+input[type="text"], select, label, h1 {
+	font-size: 32px;
 }
 
 input[readonly] {
-	background-color: rgba(0, 0, 0, 0.2);
 	font-style: italic;
 }
 
 input[type="text"] {
-	text-align: right;
+	text-align: center;
+	color: #000000;
 }

@@ -56,6 +56,7 @@ var Exchanger = {
 		}, function(xhr) {
 			console.log('Error');
 		});
+		Exchanger.saveData();
 	},
 	convert: function() {
 		Exchanger.getConversionRates();
@@ -70,8 +71,18 @@ var Exchanger = {
 	},
 	saveData: function() {
 		// save Data to localStorage for offline use
+		if(hasLocalStorage()) {
+			localStorage.setItem('ExchangerData', JSON.stringify(Exchanger.Data));
+		}
 	},
 	loadData: function() {
 		// load Data from localStorage
+		if(hasLocalStorage()) {
+			if(localStorage.getItem('ExchangerData') != null) {
+				Exchanger.Data = JSON.parse(localStorage.getItem('ExchangerData'));
+			}
+		}
 	}
 }
+
+window.onLoad = Exchanger.loadData();
